@@ -30,7 +30,7 @@ async fn get_fibonacci(Path(n): Path<u64>) -> String {
 async fn main() -> shuttle_axum::ShuttleAxum {
     let router = Router::new()
         .route("/", get(hello_world))
-        .route("/fibonacci/:n", get(get_fibonacci));
+        .route("/fibonacci/{n}", get(get_fibonacci));
 
     Ok(router.into())
 }
