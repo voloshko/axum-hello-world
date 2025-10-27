@@ -23,7 +23,7 @@ fn fibonacci(n: u64) -> u64 {
 
 async fn get_fibonacci(Path(n): Path<u64>) -> String {
     let result = fibonacci(n);
-    format!("{}", result)
+    result.to_string()
 }
 
 #[shuttle_runtime::main]
